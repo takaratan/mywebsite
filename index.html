@@ -1,79 +1,144 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>私の好きなもの</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fafafa;
-            padding: 40px;
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            background-color: #f2f2f7;
+            padding: 20px;
             color: #333;
         }
+
         h1 {
             text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
         }
+
         section {
-            background-color: #fff;
-            margin: 20px auto;
+            background-color: #ffffff;
+            margin-bottom: 30px;
             padding: 20px;
-            border-radius: 12px;
-            max-width: 700px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
+
         h2 {
-            color: #444;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
+            font-size: 22px;
+            margin-top: 0;
+            border-left: 6px solid #66aaff;
+            padding-left: 10px;
         }
-        ul {
-            list-style-type: circle;
-            padding-left: 20px;
+
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 15px 0;
         }
+
+        .item {
+            display: flex;
+            align-items: center;
+            background: #fafafa;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .item img {
+            width: 50px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+
         iframe {
             width: 100%;
-            height: 152px;
+            height: 160px;
             border: none;
+            border-radius: 10px;
             margin-top: 10px;
+        }
+
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
+
     <h1>私の好きなもの</h1>
 
     <section>
         <h2>🎵 好きな音楽</h2>
         <p>最近よく聴いている曲：</p>
-        <!-- 下のURLは例です。差し替え可能 -->
         <iframe src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </section>
 
     <section>
         <h2>🎮 今やっているゲーム</h2>
-        <ul>
-            <li>ゼルダの伝説 ティアーズ オブ ザ キングダム</li>
-            <li>原神</li>
-            <li>スプラトゥーン3</li>
-        </ul>
+        <div class="item-list">
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Splatoon_3_cover_art.jpg" alt="スプラトゥーン3">
+                <span>スプラトゥーン3</span>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Genshin_Impact_logo.svg" alt="原神">
+                <span>原神</span>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/50/The_Legend_of_Zelda_Tears_of_the_Kingdom_box_art.jpg" alt="ゼルダ">
+                <span>ゼルダの伝説 ティアーズ オブ ザ キングダム</span>
+            </div>
+        </div>
     </section>
 
     <section>
         <h2>📺 見ているテレビ番組</h2>
-        <ul>
-            <li>ブラッシュアップライフ</li>
-            <li>水曜日のダウンタウン</li>
-            <li>進撃の巨人（アニメ）</li>
-        </ul>
+        <div class="item-list">
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/ja/thumb/7/7f/BrushupLifeLogo.png/220px-BrushupLifeLogo.png" alt="ブラッシュアップライフ">
+                <span>ブラッシュアップライフ</span>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/ja/3/36/Wednesday_downtown_logo.png" alt="水曜日のダウンタウン">
+                <span>水曜日のダウンタウン</span>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Attack_on_Titan_logo.svg/2560px-Attack_on_Titan_logo.svg.png" alt="進撃の巨人">
+                <span>進撃の巨人（アニメ）</span>
+            </div>
+        </div>
     </section>
 
     <section>
         <h2>🎫 行きたいイベント</h2>
-        <ul>
-            <li>フジロックフェスティバル</li>
-            <li>ゲームショウ2025</li>
-            <li>ジブリ展</li>
-        </ul>
+        <div class="item-list">
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Fuji_Rock_Festival_logo.png" alt="フジロック">
+                <span>フジロックフェスティバル</span>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Tokyo_Game_Show_Logo.png" alt="ゲームショウ">
+                <span>ゲームショウ2025</span>
+            </div>
+            <div class="item">
+                <img src="https://www.ghibli.jp/images/logo.gif" alt="ジブリ展">
+                <span>ジブリ展</span>
+            </div>
+        </div>
     </section>
+
 </body>
 </html>
-
