@@ -13,14 +13,43 @@
       color: #333;
     }
     header {
-      text-align: center;
       background-color: #fff;
-      padding: 2rem 1rem;
+      padding: 1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
     }
     header img {
       width: 150px;
       height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      padding: 1rem;
+      text-decoration: none;
+      color: #2d6a4f;
+      border-bottom: 1px solid #eee;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .menu-open nav {
+      display: flex;
     }
     section {
       padding: 2rem 1rem;
@@ -29,8 +58,8 @@
     }
     h2 {
       font-weight: 600;
-      color: #0f332f;
-      border-left: 6px solid #e0d041;
+      color: #2d6a4f;
+      border-left: 6px solid #95d5b2;
       padding-left: 1rem;
       margin-top: 3rem;
     }
@@ -70,6 +99,9 @@
       max-width: 100%;
       border-radius: 8px;
     }
+    .card p {
+      text-align: center;
+    }
     iframe {
       width: 100%;
       height: 200px;
@@ -85,10 +117,18 @@
 </head>
 <body>
   <header>
+    <div class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</div>
     <img src="images/logo2.png" alt="サイトロゴ">
+    <nav>
+      <a href="#music">音楽</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#events">イベント</a>
+      <a href="#games">ゲーム</a>
+      <a href="#tv">番組</a>
+    </nav>
   </header>
 
-  <section>
+  <section id="music">
     <h2>🎵 今好きな音楽</h2>
     <div class="card">
       <img src="https://penthouse-tokyo.com/wp/wp-content/themes/penthouse-theme/images/common/logo.png" alt="Penthouseロゴ">
@@ -97,7 +137,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="youtube">
     <h2>📺 今見ているYouTube</h2>
      <div class="card">
       <img src="https://yt3.googleusercontent.com/noNDPFJot5QiXaEKIlb8eGvVIUVgrUbSmuOqhaqsTOYM2hALwF33WsTHQUlJqixzdCXZTi-w=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="さらばロゴ">
@@ -109,8 +149,8 @@
      </div>
   </section>
 
-  <section>
-    <h2>🎫 今行きたいイベント</h2>
+  <section id="events">
+    <h2>🎫 行きたいイベント</h2>
     <div class="item-list">
       <div class="item">
         <img src="https://lifetoronto.jp/lifetoronto/wp-content/uploads/2019/10/joehisaishi.jpeg" alt="ジブリ展">
@@ -119,30 +159,16 @@
     </div>
   </section>
 
-  <section>
-    <h2>🏸 今の趣味</h2>
-    <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2019/04/19/10/13/badminton-4139024_1280.jpg" alt="バドミントン">
-      <p>バドミントン</p>
-    </div>
-    <div class="card">
-      <p>作曲</p>
-      <iframe src="https://www.youtube.com/embed/cS9hLrhBdeM" allowfullscreen></iframe>
-    </div>
-
-  </section>
-
-
-  <section>
-    <h2>🎮 今やっているゲーム</h2>
+  <section id="games">
+    <h2>🎮 ゲーム</h2>
     <div class="card">
       <img src="images/splatoon3_logo.png" alt="スプラトゥーン3">
       <p>スプラトゥーン3</p>
     </div>
   </section>
 
-  <section>
-    <h2>📺 今見ている番組</h2>
+  <section id="tv">
+    <h2>📺 見ている番組</h2>
     <div class="card">
       <p>（番組のタイトルや画像などを追加）</p>
     </div>
