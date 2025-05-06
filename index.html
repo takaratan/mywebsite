@@ -1,157 +1,104 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>私の好きなもの</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorite Things</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #4A90E2;
-      --bg-color: #f5f7fa;
-      --card-bg: #ffffff;
-      --text-color: #333333;
-    }
-
     body {
-      font-family: 'Poppins', 'Noto Sans JP', sans-serif;
       margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
-
-    h1 {
+    header {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
-    section {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font-size: 24px;
-      border-left: 6px solid var(--primary-color);
-      padding-left: 12px;
-      margin-top: 0;
-    }
-
-    .item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 15px;
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      background: #f9f9f9;
-      padding: 12px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    }
-
-    .item img {
-      width: 50px;
+    header img {
+      width: 150px;
       height: auto;
-      border-radius: 8px;
-      margin-right: 12px;
     }
-
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-weight: 600;
+      color: #2d6a4f;
+      border-left: 6px solid #95d5b2;
+      padding-left: 1rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
     iframe {
       width: 100%;
       height: 200px;
       border: none;
-      border-radius: 10px;
-      margin-top: 10px;
+      margin-top: 0.5rem;
     }
-
     @media (min-width: 600px) {
-      h1 {
-        font-size: 36px;
-      }
-      h2 {
-        font-size: 28px;
+      iframe {
+        height: 300px;
       }
     }
   </style>
 </head>
 <body>
-
-  <h1>私の好きなもの</h1>
-
-  <section>
-    <h2>🎵 好きな音楽</h2>
-    <p>最近のお気に入り曲：</p>
-    <iframe src="https://www.youtube.com/embed/nI61IxcCiXc" title="Penthouse - 一難 [Official Music Video]" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </section>
-
-<video controls width="100%">
-  <source src="videos/my-song.mp4" type="video/mp4">
-  ブラウザが video タグに対応していません。
-</video>
-
+  <header>
+    <img src="images/logo.png" alt="サイトロゴ">
+  </header>
 
   <section>
-    <h2>🎮 今やっているゲーム</h2>
-    <div class="item-list">
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Splatoon_3_cover_art.jpg" alt="スプラトゥーン3">
-        <span>スプラトゥーン3</span>
-      </div>
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Genshin_Impact_logo.svg" alt="原神">
-        <span>原神</span>
-      </div>
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/50/The_Legend_of_Zelda_Tears_of_the_Kingdom_box_art.jpg" alt="ゼルダの伝説 ティアーズ オブ ザ キングダム">
-        <span>ゼルダの伝説 ティアーズ オブ ザ キングダム</span>
-      </div>
+    <h2>🎵 音楽</h2>
+    <div class="card">
+      <img src="images/penthouse_logo.jpg" alt="Penthouseロゴ">
+      <p>Penthouse「一難」</p>
+      <iframe src="https://www.youtube.com/embed/動画IDをここに" allowfullscreen></iframe>
     </div>
   </section>
 
   <section>
-    <h2>📺 見ているテレビ番組</h2>
-    <div class="item-list">
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/ja/7/7f/BrushupLifeLogo.png" alt="ブラッシュアップライフ">
-        <span>ブラッシュアップライフ</span>
-      </div>
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/ja/3/36/Wednesday_downtown_logo.png" alt="水曜日のダウンタウン">
-        <span>水曜日のダウンタウン</span>
-      </div>
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Attack_on_Titan_logo.svg" alt="進撃の巨人">
-        <span>進撃の巨人（アニメ）</span>
-      </div>
+    <h2>🎮 ゲーム</h2>
+    <div class="card">
+      <img src="images/splatoon3_logo.png" alt="スプラトゥーン3">
+      <p>スプラトゥーン3で塗りまくり中！</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📺 見ているYouTubeチャンネル</h2>
+    <div class="card">
+      <p>（ここにチャンネル名やリンクなどを追加）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📺 見ている番組</h2>
+    <div class="card">
+      <p>（番組のタイトルや画像などを追加）</p>
     </div>
   </section>
 
   <section>
     <h2>🎫 行きたいイベント</h2>
-    <div class="item-list">
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Fuji_Rock_Festival_logo.png" alt="フジロックフェスティバル">
-        <span>フジロックフェスティバル</span>
-      </div>
-      <div class="item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Tokyo_Game_Show_Logo.png" alt="東京ゲームショウ">
-        <span>東京ゲームショウ2025</span>
-      </div>
-      <div class="item">
-        <img src="https://www.ghibli.jp/images/logo.gif" alt="ジブリ展">
-        <span>ジブリ展</span>
-      </div>
+    <div class="card">
+      <p>（イベント名・画像・日程など）</p>
     </div>
   </section>
-
 </body>
 </html>
