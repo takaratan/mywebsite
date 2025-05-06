@@ -11,10 +11,11 @@
       font-weight: bold;
       background-color: #b4e0dc;
       color: #333;
+      padding-top: 90px;
     }
     header {
       background-color: #fff;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       position: fixed;
       top: 0;
@@ -22,14 +23,15 @@
       right: 0;
       z-index: 1000;
     }
-    body {
-      padding-top: 100px;
+    header a.logo-link {
+      display: block;
+      width: 150px;
+      margin: 0 auto;
     }
     header img {
-      width: 120px;
+      width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto;
     }
     nav {
       display: none;
@@ -50,7 +52,7 @@
     }
     .menu-toggle {
       position: absolute;
-      top: 1rem;
+      top: 0.5rem;
       right: 1rem;
       font-size: 2rem;
       cursor: pointer;
@@ -65,7 +67,7 @@
     }
     h2 {
       font-weight: 600;
-      color: #2d6a4f;
+      color: #0f332f;
       border-left: 6px solid #e0d041;
       padding-left: 1rem;
       margin-top: 3rem;
@@ -125,11 +127,12 @@
 <body>
   <header>
     <div class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</div>
-    <img src="images/logo2.png" alt="サイトロゴ">
+    <a href="#" class="logo-link"><img src="images/logo2.png" alt="サイトロゴ"></a>
     <nav>
       <a href="#music">音楽</a>
       <a href="#youtube">YouTube</a>
       <a href="#events">イベント</a>
+      <a href="#hobby">趣味</a>
       <a href="#games">ゲーム</a>
       <a href="#tv">番組</a>
     </nav>
@@ -139,15 +142,14 @@
     <h2>🎵 今好きな音楽</h2>
     <div class="card">
       <img src="https://penthouse-tokyo.com/wp/wp-content/themes/penthouse-theme/images/common/logo.png" alt="Penthouseロゴ">
-      <p>Penthouse</p>
       <iframe src="https://www.youtube.com/embed/nI61IxcCiXc" allowfullscreen></iframe>
+      <p>Penthouse</p>
     </div>
     <div class="card">
       <img src="https://gogovanillas.com/static/gogovanillas/fanclub/common/logo_ggv_202311_H2xjNBLA.png" alt="gogoロゴ">
-      <p>go!go!vanillas</p>
       <iframe src="https://www.youtube.com/embed/jT2bpW9A9bk" allowfullscreen></iframe>
+      <p>go!go!vanillas</p>
     </div>
-
   </section>
 
   <section id="youtube">
@@ -173,7 +175,6 @@
         <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG4eQWmiUo0voChxLSQXrk9W6pSUtOB7YnHIcOt5hlbz2Y6iTCHU8_0U2SikZeXzB-QlFMcyGvHex0XJ3L7oN-t05-k267Pz9WDtE9o9gpTYLoLvLgycSzOe6LA_PXOj-pi21YgWv_wpiECtl1yPnOb3s08Wt9zGUVT3B1vOiN8vC0qi8OyEvwpaS5Y2mWyEjVyCB-F5PdVm9BBdSVKnteidsIZLOTYofnhPdgtVkZ7kCQvQpJ7apZ6tvyXUsZospbHsFQSzz4zy45qN2MTDE_pgwk9rh5BciaPT5HSpbvu4H2zQv-yu69OcCaXKYvzgV2OU0zHZCwXO6uwJ2DYlVC-wyvwTnJR-N9lVQLmTmYbzQBPp2GSTXXT-xLgd0FN5MSSOkBKVGDOEBaDDW25mOPBQ=/rectangle_large_type_2_5ae49722fdf7dbf6d59ec3fb04f44186.jpeg?errorImage=false" alt="でんかに">
         <span>電池の切れかけた蟹</span>
       </div>
-
     </div>
   </section>
 
