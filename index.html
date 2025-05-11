@@ -73,6 +73,31 @@
       margin-top: 3rem;
     }
 
+
+    /* 横スクロールカード用のスタイル */
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch; /* iOSでスムーズスクロール */
+}
+.card-container .card {
+  min-width: 300px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 12px;
+  text-align: center;
+}
+.card-container iframe {
+  border-radius: 8px;
+  width: 100%;
+}
+
     .item-list {
       display: flex;
       flex-direction: column;
@@ -140,6 +165,7 @@
  
   <section id="music">
     <h2>🎵 最近好きな音楽</h2>
+    <div class="card-container">
     <div class="card">
       <img src="https://th.bing.com/th/id/OIP.euD5_MxUzRg3_vTyt2skNgHaD4?rs=1&pid=ImgDetMain" alt="imase">
       <iframe src="https://www.youtube.com/embed/2kIHtnU3fFY" allowfullscreen></iframe>
@@ -159,6 +185,7 @@
       <img src="https://gogovanillas.com/static/gogovanillas/fanclub/common/logo_ggv_202311_H2xjNBLA.png" alt="gogoロゴ">
       <iframe src="https://www.youtube.com/embed/jT2bpW9A9bk" allowfullscreen></iframe>
       <p>go!go!vanillas</p>
+    </div>
     </div>
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/47HtDocQWV6ISTowXbbLZW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1pLB6nhOze7gAo5E9hVmXW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
