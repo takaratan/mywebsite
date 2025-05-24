@@ -175,10 +175,11 @@
 
   .carousel-track {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     scroll-snap-type: x mandatory;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
   .carousel-slide {
@@ -214,14 +215,45 @@
   .carousel-indicators span.active {
     background-color: #333;
   }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    font-size: 24px;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  .carousel-arrow.left {
+    left: 10px;
+  }
+
+  .carousel-arrow.right {
+    right: 10px;
+  }
+
+  @media (hover: none) {
+    .carousel-arrow {
+      display: none;
+    }
+  }
 </style>
 
 <div class="carousel">
+  <button class="carousel-arrow left" onclick="moveSlide(-1)">‹</button>
+  <button class="carousel-arrow right" onclick="moveSlide(1)">›</button>
+
   <div class="carousel-track" id="carouselTrack">
-    <div class="carousel-slide"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="スライド1"></div>
-    <div class="carousel-slide"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="スライド2"></div>
-    <div class="carousel-slide"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="スライド3"></div>
+    <div class="carousel-slide"><img src="images/news2.png" alt="スライド1"></div>
+    <div class="carousel-slide"><img src="images/news2.png" alt="スライド2"></div>
+    <div class="carousel-slide"><img src="images/news1.png" alt="スライド3"></div>
   </div>
+
   <div class="carousel-indicators" id="carouselIndicators">
     <span class="active"></span>
     <span></span>
@@ -230,16 +262,22 @@
 </div>
 
 <script>
-  // オートインジケーター切り替え（CSSオンリーではないので任意）
   const track = document.getElementById('carouselTrack');
+  const slides = track.children;
   const indicators = document.getElementById('carouselIndicators').children;
+  let currentIndex = 0;
 
-  track.addEventListener('scroll', () => {
-    const index = Math.round(track.scrollLeft / track.offsetWidth);
-    [...indicators].forEach((dot, i) =>
-      dot.classList.toggle('active', i === index)
-    );
-  });
+  function updateIndicators(index) {
+    [...indicators].forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+    track.scrollLeft = currentIndex * track.offsetWidth;
+    updateIndicators(currentIndex);
+  }
 </script>
 
 
