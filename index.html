@@ -163,27 +163,6 @@
   </style>
 
 </head>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // 一度表示されたら監視をやめる（必要に応じて）
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  document.querySelectorAll('.card').forEach(card => {
-    observer.observe(card);
-  });
-</script>
-
-
-
 <body>
   <header>
     <div class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</div>
@@ -440,6 +419,26 @@
     <div class="card">
     </div>
   </section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // 一度表示されたら監視をやめる（必要に応じて）
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+
 
 </body>
 </html>
