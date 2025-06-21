@@ -74,6 +74,19 @@
     }
 
 
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
     /* 横スクロールカード用のスタイル */
 .card-container {
   display: flex;
@@ -148,6 +161,27 @@
       }
     }
   </style>
+
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // 一度表示されたら監視をやめる（必要に応じて）
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+
 </head>
 <body>
   <header>
@@ -276,9 +310,6 @@
     updateIndicators(currentIndex);
   }
 </script>
-
-
-
 
 
 
